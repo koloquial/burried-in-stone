@@ -1,0 +1,32 @@
+input {
+    padding: 10px 15px; 
+    border: 1px solid var(--text);
+    background-color: var(--background);
+    color: var(--text);
+    border-radius: 8px; 
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(var(--text-rgb), 0.6); 
+}
+
+input:hover {
+    border-color: var(--text); 
+}
+
+input:focus {
+    border-color: var(--text);
+    outline: 2px solid var(--text); 
+    outline-offset: 2px;
+    background-color: var(--background); 
+}
+
+input:disabled {
+    background-color: rgba(var(--background-rgb), 0.5);
+    color: rgba(var(--text-rgb), 0.5);
+    cursor: not-allowed;
+}

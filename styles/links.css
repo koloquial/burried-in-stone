@@ -1,0 +1,26 @@
+a {
+    color: var(--text); 
+    text-decoration: underline; 
+    font-weight: 500;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    cursor: pointer;
+    color: var(--link);
+}
+
+a:hover {
+    color: var(--primary, #85bdf9); 
+    text-decoration: underline;
+}
+
+a:active {
+    color: var(--primary-dark, #0056b3); 
+}
+
+a:visited {
+    color: var(--text-muted, #6c757d); 
+}
+
+a:focus {
+    outline: 2px solid var(--primary, #007bff);
+    outline-offset: 2px;
+}
