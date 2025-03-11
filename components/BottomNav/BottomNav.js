@@ -10,7 +10,12 @@ export default function BottomNav() {
 
     // List of pages where BottomNav should be visible
     const privatePages = ["/dashboard", "/new-character", "/profile", "/settings", "/wiki"];
-    if (!privatePages.includes(pathname)) return null;
+
+    // Check if pathname starts with "/character/" (for dynamic character pages)
+    const isCharacterPage = pathname.startsWith("/character/");
+
+    // Show BottomNav only on allowed pages or dynamic character pages
+    if (!privatePages.includes(pathname) && !isCharacterPage) return null;
 
     return (
         <nav className="bottom-nav">

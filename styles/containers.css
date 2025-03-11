@@ -20,8 +20,7 @@
     transform: translateY(-2px); /* Small lift instead of scaling */
 }
 
-
-.button-grid{
+.grid-2x{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;

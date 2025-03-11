@@ -44,7 +44,7 @@ export const UserProvider = ({ children }) => {
             const res = await fetch("/api/create-user", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ uid, email }),
+                body: JSON.stringify({ uid, email, saved: [] }),
             });
 
             if (!res.ok) throw new Error("Failed to create user in MongoDB");

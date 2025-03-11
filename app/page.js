@@ -24,7 +24,7 @@ export default function Home() {
     <div className='splash'>
       <div className='title'>
         <h1>Burried</h1>
-        <h2>in Stone</h2>
+        <h2>in Stone <span className='version'>v.0.1</span></h2>
       </div>
       <AuthForm />
     </div>
