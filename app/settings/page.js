@@ -5,13 +5,13 @@ import { useUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
 import { deleteUser } from "firebase/auth";
+import "./styles.css";
 
 export default function Settings() {
     const { user, signOut } = useAuth();
     const { refreshUserData } = useUser();
     const router = useRouter();
     const [loading, setLoading] = useState(true);
-    const [darkMode, setDarkMode] = useState(false);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
@@ -20,16 +20,8 @@ export default function Settings() {
             router.push("/");
         } else {
             setLoading(false);
-            setDarkMode(localStorage.getItem("theme") === "dark");
         }
     }, [user, router]);
-
-    const toggleDarkMode = () => {
-        const newTheme = darkMode ? "light" : "dark";
-        setDarkMode(!darkMode);
-        localStorage.setItem("theme", newTheme);
-        document.documentElement.setAttribute("data-theme", newTheme);
-    };
 
     const handleResetAccount = async () => {
         setError("");
@@ -78,32 +70,32 @@ export default function Settings() {
     if (loading) return <Loading />;
 
     return (
-        <div className="settings-container">
-            <h1>Settings</h1>
-
-            {/* Dark Mode Toggle */}
-            <div className="setting-item">
-                <label>Dark Mode:</label>
-                <button onClick={toggleDarkMode}>{darkMode ? "Disable" : "Enable"}</button>
+        <div className="settings">
+            <div className='content-block'>
+                <label>Settings</label>
             </div>
 
-            {/* Reset Account (Delete All Characters) */}
-            <div className="setting-item">
-                <label>Reset Account (Delete All Characters):</label>
-                <button className="delete-btn" onClick={handleResetAccount}>Reset</button>
-            </div>
+            <div className='content-block'>
+    
+            
+                <label>Reset Account</label>
+                <p>This will delete all of your characters.</p>
+                <button onClick={handleResetAccount}>Reset</button>
+                </div>
 
-            {/* Delete Account (Permanent) */}
-            <div className="setting-item">
-                <label>Delete Account (Permanent):</label>
-                <button className="delete-btn" onClick={handleDeleteAccount}>Delete Account</button>
+            
+
+ 
+            <div className="content-block">
+                <label>Delete Account</label>
+                <p>This action is permanent.</p>
+                <button onClick={handleDeleteAccount}>Delete Account</button>
             </div>
 
             {error && <p className="error">{error}</p>}
             {success && <p className="success">{success}</p>}
 
-            {/* Back to Dashboard */}
-            <button className="dashboard-btn" onClick={() => router.push("/dashboard")}>Back to Dashboard</button>
+           
         </div>
     );
 }

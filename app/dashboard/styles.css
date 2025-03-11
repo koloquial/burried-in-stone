@@ -1,0 +1,74 @@
+.dashboard {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.dashboard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/dashboard.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; 
+    z-index: -1;
+}
+
+.character-tile {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Enables absolute positioning inside */
+    background-color: var(--background-trans);
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    text-align: left;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* Position Settings Icon in Top-Right */
+.settings-btn {
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--text, white);
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.settings-btn:hover {
+    color: var(--primary, #85bdf9);
+    transform: scale(1.1);
+}
+
+
+.character-tile:hover {
+    transform: scale(1.05); /* Slight enlargement for a pop effect */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow to enhance the effect */
+}
+
+/* Ensure Icon Resizes Responsively */
+.nav-icon {
+    font-size: 1.2rem;
+}

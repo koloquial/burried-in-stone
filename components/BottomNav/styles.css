@@ -3,30 +3,58 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #1e1e1e;
+    background-color: var(--background-dark, #1e1e1e);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 0;
-    border-top: 2px solid #444;
+    padding: 12px 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
+    backdrop-filter: blur(8px); /* Soft blur effect */
 }
 
+/* Navigation Button Styling */
 .bottom-nav button {
     background: none;
     border: none;
-    color: white;
-    font-size: 0.85rem;
+    color: var(--text, white);
+    font-size: 0.9rem;
     font-weight: 500;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
-    padding: 8px;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
 }
 
-/* Adjust icon and text size for smaller screens */
+/* Hover Effect */
+.bottom-nav button:hover {
+    color: var(--primary, #85bdf9);
+    text-shadow: 0px 0px 6px rgba(133, 189, 249, 0.5); /* Soft glow effect */
+    transform: scale(1.05); /* Subtle pop effect */
+}
+
+/* Active (Clicked) State */
+.bottom-nav button:active {
+    transform: scale(0.95);
+}
+
+/* Default Icon Styling */
+.nav-icon {
+    font-size: 1.4rem;
+    margin-bottom: 3px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Icons */
+.bottom-nav button:hover .nav-icon {
+    transform: scale(1.1); /* Slightly enlarge icon */
+}
+
+/* Adjustments for Smaller Screens */
 @media (max-width: 350px) {
     .nav-icon {
         font-size: 1.2rem; /* Shrink icons slightly */
@@ -35,14 +63,8 @@
     .bottom-nav span {
         font-size: 0.75rem; /* Reduce text size slightly */
     }
-}
 
-.bottom-nav button:hover {
-    color: #007bff;
-}
-
-/* Default Icon Size */
-.nav-icon {
-    font-size: 1.4rem;
-    margin-bottom: 3px;
+    .bottom-nav {
+        padding: 8px 0; /* Adjust padding for smaller screens */
+    }
 }

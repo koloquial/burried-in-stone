@@ -1,4 +1,5 @@
 "use client";
+import "./styles.css";
 import { useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useSocket } from "@/context/SocketContext";
@@ -20,8 +21,11 @@ export default function Home() {
   if (user) return <Loading />;
 
   return (
-    <div>
-      <h1>Burried in Stone</h1>
+    <div className='splash'>
+      <div className='title'>
+        <h1>Burried</h1>
+        <h2>in Stone</h2>
+      </div>
       <AuthForm />
     </div>
   );

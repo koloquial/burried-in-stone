@@ -1,0 +1,26 @@
+.content-block {
+    box-sizing: border-box;
+    background-color: var(--background-trans);
+    padding: 16px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/* Pop-Up Hover Effect */
+.content-block:hover {
+    transform: scale(1.05); /* Slight enlargement for a pop effect */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow to enhance the effect */
+}
+
+.button-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}

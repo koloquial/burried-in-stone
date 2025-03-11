@@ -47,15 +47,20 @@ export default function CharacterSettings({ character, onClose }) {
     };
 
     return (
-        <div>
-            <h2>Manage Character: {character.name}</h2>
+        <div className='content-block'>
+            <label>Manage Character</label>
 
-            <p className='label'>Rename:</p>
+            <div className='content-block'>
+            <label>Rename:</label>
             <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} />
             {error && <p className="error">{error}</p>}
 
-            <button onClick={handleRename}>Rename</button>
-            <button onClick={handleDelete} style={{ background: "red", color: "white" }}>Delete</button>
+            <div className='button-grid'>
+                <button onClick={handleRename}>Rename</button>
+                <button onClick={handleDelete} style={{ background: "red", color: "white" }}>Delete</button>
+            </div>
+            </div>
+            
         </div>
     );
 }

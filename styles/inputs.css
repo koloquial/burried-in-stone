@@ -8,25 +8,36 @@ input {
     font-weight: 400;
     transition: all 0.3s ease-in-out;
     outline: none;
+    margin-top: 10px;
 }
 
+/* Placeholder Styling */
 input::placeholder {
     color: rgba(var(--text-rgb), 0.6); 
 }
 
+/* Enhanced Hover Effect */
 input:hover {
     border-color: var(--text); 
+    box-shadow: 0px 0px 6px rgba(var(--text-rgb), 0.5); /* Soft glow effect */
+    transform: scale(1.02); /* Slight pop effect */
 }
 
+/* Focus Effect (Click Inside) */
 input:focus {
     border-color: var(--text);
     outline: 2px solid var(--text); 
     outline-offset: 2px;
     background-color: var(--background); 
+    box-shadow: 0px 0px 10px rgba(var(--text-rgb), 0.7); /* Stronger glow on focus */
+    transform: scale(1.03); /* More pronounced pop */
 }
 
+/* Disabled Input */
 input:disabled {
     background-color: rgba(var(--background-rgb), 0.5);
     color: rgba(var(--text-rgb), 0.5);
     cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
 }

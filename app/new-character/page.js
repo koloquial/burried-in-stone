@@ -1,4 +1,5 @@
 "use client";
+import "./styles.css";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useUser } from "@/context/UserContext";
@@ -50,9 +51,10 @@ export default function NewCharacter() {
     if (loading) return <Loading />;
 
     return (
-        <div>
-            <h2>Create a New Character</h2>
-            {error && <p className="error">{error}</p>}
+        <div className='new-character'>
+            <div className='content-block'>
+                <label>Create a New Character</label>
+                {error && <p className="error">{error}</p>}
             <form onSubmit={handleCreateCharacter}>
                 <input
                     type="text"
@@ -63,6 +65,9 @@ export default function NewCharacter() {
                 />
                 <button type="submit">Create Character</button>
             </form>
+            </div>
+            
+            
         </div>
     );
 }

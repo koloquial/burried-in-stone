@@ -1,6 +1,7 @@
 :root{
     --background: #222222;
-    --text: #bababa;
+    --background-trans: rgba(34, 34, 34, .8);
+    --text: #ffffff;
     --white: #fff;
     --error: red;
     --link: #85bdf9;

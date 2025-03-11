@@ -24,7 +24,7 @@ export default function Login() {
 
     return (
         <div className="auth-container">
-            <p className='label'>Login</p>
+            <label>Login</label>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleLogin}>
                 <input

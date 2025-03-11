@@ -2,13 +2,12 @@
 import { useState } from 'react';
 import Login from "./Login";
 import Signup from "./Signup";
-import './styles.css';
 
 export default function AuthForm() {
     const [toggle, setToggle] = useState(true);
 
     return (
-        <div>
+        <div className='content-block'>
            {toggle ? <Login /> : <Signup />}
            {toggle ? 
             <p><a onClick={() => setToggle(false)}>Create an account</a></p> : 
