@@ -9,7 +9,7 @@ export default function BottomNav() {
     const { signOut } = useAuth();
 
     // List of pages where BottomNav should be visible
-    const privatePages = ["/dashboard", "/new-character", "/profile", "/settings", "/wiki", "/game"];
+    const privatePages = ["/dashboard", "/new-character", "/profile", "/settings", "/wiki"];
     if (!privatePages.includes(pathname)) return null;
 
     return (

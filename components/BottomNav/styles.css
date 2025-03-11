@@ -10,6 +10,7 @@
     padding: 12px 0;
     border-top: 2px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
+    height: 50px;
     backdrop-filter: blur(8px); /* Soft blur effect */
 }
 

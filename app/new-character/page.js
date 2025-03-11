@@ -66,8 +66,6 @@ export default function NewCharacter() {
                 <button type="submit">Create Character</button>
             </form>
             </div>
-            
-            
         </div>
     );
 }

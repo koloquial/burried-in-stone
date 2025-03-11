@@ -8,6 +8,7 @@ export const UserProvider = ({ children }) => {
     const { user } = useAuth();
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [activeCharacter, setActiveCharacter] = useState(null);
 
     const fetchUserData = async () => {
         if (!user) return;
@@ -60,7 +61,7 @@ export const UserProvider = ({ children }) => {
     }, [user]);
 
     return (
-        <UserContext.Provider value={{ userData, loading, refreshUserData: fetchUserData }}>
+        <UserContext.Provider value={{ userData, loading, refreshUserData: fetchUserData, activeCharacter, setActiveCharacter }}>
             {children}
         </UserContext.Provider>
     );

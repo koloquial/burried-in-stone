@@ -30,7 +30,7 @@ export default function Signup() {
 
     return (
         <div className="auth-container">
-            <p className="label">Sign Up</p>
+            <label>Sign Up</label>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleSignup}>
                 <input
